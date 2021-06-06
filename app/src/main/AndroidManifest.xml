@@ -19,7 +19,7 @@
             android:name="com.google.android.geo.API_KEY"
             android:value="@string/google_maps_key" />
         <activity android:name=".Maps" />
-        <activity android:name=".MainActivity3">
+        <activity android:name=".Sign_On">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 

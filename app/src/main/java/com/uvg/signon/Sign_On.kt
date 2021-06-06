@@ -6,7 +6,7 @@ import android.os.Bundle
 import android.os.Handler
 import com.google.firebase.auth.FirebaseAuth
 
-class MainActivity3 : AppCompatActivity() {
+class Sign_On: AppCompatActivity() {
 
     private lateinit var mAuth: FirebaseAuth
 
