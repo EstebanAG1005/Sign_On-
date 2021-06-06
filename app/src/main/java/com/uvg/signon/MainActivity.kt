@@ -67,6 +67,8 @@ class MainActivity: AppCompatActivity() {
                         Log.d(TAG, "signInWithCredential:success")
                         val user = auth.currentUser
                         //updateUI(user)
+                        val intent = Intent(this, Maps::class.java)
+                        startActivity(intent)
                     } else {
                         // If sign in fails, display a message to the user.
                         Log.w(TAG, "signInWithCredential:failure", task.exception)

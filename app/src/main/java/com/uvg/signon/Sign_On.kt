@@ -6,30 +6,29 @@ import android.os.Bundle
 import android.os.Handler
 import com.google.firebase.auth.FirebaseAuth
 
-class Sign_On : AppCompatActivity() {
+class MainActivity3 : AppCompatActivity() {
 
-    private lateinit var auth: FirebaseAuth
+    private lateinit var mAuth: FirebaseAuth
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
 
-        auth = FirebaseAuth.getInstance()
-        val user = auth.currentUser
+        mAuth = FirebaseAuth.getInstance()
+        val user = mAuth.currentUser
 
         Handler().postDelayed({
             if (user != null){
-                val Map = Intent(this, Maps::class.java)
-                startActivity(Map)
+                val Mapa = Intent(this, Maps::class.java)
+                startActivity(Mapa)
                 finish()
 
             } else {
-                val SignIn = Intent(this,MainActivity::class.java)
-                startActivity(SignIn)
+                val SignInGoogle = Intent(this,MainActivity::class.java)
+                startActivity(SignInGoogle)
                 finish()
             }
 
         }, 2000)
     }
 }
-
