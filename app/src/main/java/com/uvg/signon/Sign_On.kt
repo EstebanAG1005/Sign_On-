@@ -8,14 +8,14 @@ import com.google.firebase.auth.FirebaseAuth
 
 class Sign_On: AppCompatActivity() {
 
-    private lateinit var mAuth: FirebaseAuth
+    private lateinit var AUT: FirebaseAuth
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
 
-        mAuth = FirebaseAuth.getInstance()
-        val user = mAuth.currentUser
+        AUT = FirebaseAuth.getInstance()
+        val user = AUT.currentUser
 
         Handler().postDelayed({
             if (user != null){

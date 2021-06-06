@@ -14,12 +14,12 @@ import com.google.android.gms.maps.SupportMapFragment
 
 class Maps : AppCompatActivity(), OnMapReadyCallback {
 
-    private lateinit var MapN: GoogleMap
+    private lateinit var MAP: GoogleMap
     private val LOCATION_PERMISSION_REQUEST = 1
 
     private fun getLocationAccess() {
         if (ContextCompat.checkSelfPermission(this, android.Manifest.permission.ACCESS_FINE_LOCATION) == PackageManager.PERMISSION_GRANTED) {
-            MapN.isMyLocationEnabled = true
+            MAP.isMyLocationEnabled = true
         }
         else
             ActivityCompat.requestPermissions(this, arrayOf(android.Manifest.permission.ACCESS_FINE_LOCATION), LOCATION_PERMISSION_REQUEST)
@@ -39,7 +39,7 @@ class Maps : AppCompatActivity(), OnMapReadyCallback {
                 ) {
                     return
                 }
-                MapN.isMyLocationEnabled = true
+                MAP.isMyLocationEnabled = true
             }
             else {
                 Toast.makeText(this, "El permiso de ubicación no está activado", Toast.LENGTH_LONG).show()
@@ -57,7 +57,7 @@ class Maps : AppCompatActivity(), OnMapReadyCallback {
     }
 
     override fun onMapReady(googleMap: GoogleMap) {
-        MapN = googleMap
+        MAP = googleMap
         getLocationAccess()
     }
 }
